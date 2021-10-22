@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discography</title>
-  <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sol4wcr.css">
+    <link rel="stylesheet" type="text/css" href="public/css/styles.css">
+
 </head>
 <body>
-  <div class="container">
-    These are their albums.
-  </div>
+<header id="header">
+    <a href="/">
+        <img src="/public/images/logo.png" alt="bts-logo" class="logo">
+    </a>
+    <img src="/public/images/hamburger-icon.png" alt="hamburger-menu-icon" id="hamburger-icon">
+</header>
+<img src="/public/images/background.png" alt="background-image" class="background" draggable="false" />
+<div class="container">
+    <h1>DISCOGRAPHY</h1>
+    <div class="albums-container">
+        <% if (data) { %>
+            <% for (let i = 0; i < data.length; i++ ) { %>
+                <div class="album-item" id="<%= data[i].shortname; %>">
+                    <img
+                            src="/public/images/<%= data[i].artwork[0]; %>" alt="<%= data[i].shortname; %>"
+                            draggable="false"
+                    >
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>has no data</p>
+        <% } %>
+    </div>
+<div class="album-modal">
+        <div class="overlay"></div>
+        <div class="modal-content">
+            <div class="row" style="align-items: flex-start; justify-content: flex-start;">
+                <img
+                        class="album-cover" src="/public/images/2cool4skool.jpeg"
+                        alt="2cool4skool"
+                >
+                <div class="track-list">
+                    1. Intro : 2 COOL 4 SKOOL feat. DJ Friz <br> 2. We are bulletproof PT.2 <br> 3. Skit : Circle room
+                    talk <br> 4. No More Dream <br> 5. Interlude <br> 6. Like <br> 7. Outro : Circle room cypher
+                </div>
+            </div>
+            <div class="row" style="align-items: center; justify-content: center; flex-direction: column;">
+                <h4 style="width: 100%; text-align: left; font-weight: bold;">Summary</h4>
+                <p>Hip hop group BTS has released its debut single 2 COOL 4 SKOOL. While billed as a single, the album
+                   boasts an impressive 27-minute runtime. This is the product of the firm conviction and passion of BTS
+                   that hip hop musicians must make their voices heard through their albums. Each member flexed their
+                   musical prowess by taking part in creating the lyrics and music for every song on the album. BTS has
+                   repeatedly said that “hip hop is genuine music for telling one’s own story,” and indeed the members
+                   rap about their own experiences and emotions. There is no discontinuity between the emotions and
+                   lyrics of BTS. The album is a satisfaction in both quality and quantity.</p>
+            </div>
+            <div class="row" style="align-items: center; justify-content: center;">
+                <iframe
+                        width="560" height="315" src="https://www.youtube.com/embed/w6oEQu3AUCs?controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/scripts.ejs') %>
 </body>
 </html>
