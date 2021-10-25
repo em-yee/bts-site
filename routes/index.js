@@ -1,9 +1,7 @@
 const express = require('express');
-const jsonData = require('../data/data.json')
+const jsonData = require('../data/data.json');
 
 const router = express.Router();
-
-
 
 //localhost:3000/
 
@@ -14,16 +12,11 @@ const router = express.Router();
 //   });
 // });
 
-
-
 router.get('/', (req, res) => {
   // res.send('Home Page');
   res.render('index', {
-    data: jsonData
+    data: jsonData,
   });
 });
-
-
-
 
 module.exports = router;
