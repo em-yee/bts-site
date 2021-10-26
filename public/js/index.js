@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  let data = $('[data-attr-value]').data('attr-value');
-  let albumData = data.albums;
+  let data = $('[data-attr-value]')?.data('attr-value');
+  let albumData = data?.albums;
 
   if (albumData) {
     for (let i = 0; i < albumData.length; i++) {

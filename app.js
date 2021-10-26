@@ -31,7 +31,7 @@ let io = socket(server);
 //listen for clients messages
 
 io.on('connection', (socket)=>{
-
+    console.log('socket connected');
     socket.on('postMessage', (msgClient)=>{ //listening for incoming chat messages
         io.emit('updateMessage', msgClient) //broadcast back out to all of the clients
     })

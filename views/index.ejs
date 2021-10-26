@@ -10,10 +10,14 @@
 
 <body>
   <%- include('partials/navbar.ejs') %>
-  <div class="background" style="background-image: url('/public/images/background.png'); max-height: 100vh; overflow: hidden; box-sizing: border-boxT  ;">
+  <div class="background" style="background-image: url('/public/images/background.png');">
     <div class="container">
-      <h1>Home Page</h1>
+      <h1 style="margin-top: 0;">Home Page</h1>
+      <div id=bts-members-img>
+        <img src="/public/images/home-wallpaper.jpeg" alt="The BTS members face a crowd on stage.">
+      </div>
     </div>
+    <%- include('partials/footer.ejs') %>
   </div>
   <%- include('partials/scripts.ejs') %>
 </body>

@@ -4,9 +4,10 @@ const socket = io(); //access to web socket api
 
 let chatUserName = document.querySelector('#chat-username')
 let chatMessage = document.querySelector('#chat-message')
-let chatForm = document.querySelector('form')
+let chatForm = document.querySelector('#chatform')
 let chatDisplay = document.querySelector('.chat-display')
 
+console.log(chatForm);
 
 //listen for new incoming messages
 socket.on('updateMessage', (data)=>{
@@ -32,7 +33,9 @@ socket.on('updateMessage', (data)=>{
 
 chatForm.addEventListener('submit', e=>{
     e.preventDefault()
-
+    console.log('posing message')
+    console.log(chatUserName.value);
+    console.log(chatMessage.value);
     socket.emit('postMessage', {
         username: chatUserName.value,
         message: chatMessage.value
