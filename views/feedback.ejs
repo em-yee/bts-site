@@ -1,99 +1,56 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BTS</title>
-    <link rel="stylesheet" href="https://use.typekit.net/sol4wcr.css" />
-    <link rel="stylesheet" type="text/css" href="public/css/styles.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTS</title>
+  <link rel="stylesheet" href="https://use.typekit.net/sol4wcr.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="background" style="background-image: url('/public/images/background.png')">
     <div class="container">
-      <%- include ('partials/navbar.ejs') %>
-      <div class="row" style="align-items: flex-start; justify-content: center">
-        <div>
-          <h1 class="feedback-form-title">Leave us some feedback!</h1>
-          <form
-            class="feedback-form-container"
-            action="/feedback"
-            method="POST"
-          >
+      <%- include('partials/navbar.ejs') %>
+      <h1 class="feedback-form-title">Leave us some feedback!</h1>
+      <div class="row" style="align-items: flex-start; justify-content: center;">
+        <form class="feedback-form-container" action="/feedback" method="POST">
+          <div class="form-item">
             <label for="feedback-name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="feedback-form-name"
-              name="name"
-              placeholder="Enter your name"
-            />
+            <input type="text" class="form-control" id="feedback-form-name" name="name" placeholder="Enter your name" />
+          </div>
+          <div class="form-item">
             <label for="feedback-bias">Bias?</label>
-            <input
-              type="text"
-              class="form-control"
-              id="feedback-form-bias"
-              name="bias"
-              placeholder="Who's your bias?"
-            />
+            <input type="text" class="form-control" id="feedback-form-bias" name="bias" placeholder="Who's your bias?" />
+          </div>
+          <div class="form-item">
             <label for="feedback-comment">Comment</label>
-            <textarea
-              type="text"
-              placeholder="Enter your message, then hit the submit"
-              class="form-control"
-              id="feedback-form-message"
-              name="message"
-              rows="6"
-            ></textarea>
-            <button type="submit" class="btn btn-default pull-right">
-              Submit
-            </button>
-          </form>
-          <!--
-                <form class="feedback-form">
-                    <div class="form-group">
-                        <label for="feedback-form-name">Name</label>
-                        <input type="text" class="form-control" id="feedback-form-name" placeholder="Enter your name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="feedback-form-title">Title</label>
-                        <input type="text" class="form-control" id="feedback-form-title"
-                            placeholder="Title of your feedback">
-                    </div>
-
-                     <div class="form-group">
-                        <label for="feedback-form-title">Bias?</label>
-                        <input type="text" class="form-control" id="feedback-form-bias"
-                            placeholder="Who's your bias?">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="feedback-form-message">Message</label>
-                        <textarea type="text" placeholder="Enter your message, then hit the submit" class="form-control"
-                            id="feedback-form-message" rows="6"></textarea>
-                    </div>
-                </form> -->
-        </div>
+            <textarea type="text" placeholder="Enter your message, then hit the submit" class="form-control" id="feedback-form-message" name="message" rows="6"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default pull-right">
+            Submit
+          </button>
+        </form>
         <!-- primary -->
         <div class="feedback-messages-container">
           <h2 class="article-title">Recent Feedback</h2>
           <div class="feedback-messages">
             <% if (data) { %> <% for (let i = 0; i < data.length; i++) { %>
             <div class="feedback-item">
-              <p><%= data[i].name %></p>
-              <p><%= data[i].bias %></p>
-              <p><%= data[i].message %></p>
+              <span class="post-name"><%= data[i].name %></span>
+              <span class="post-bias"><%= data[i].bias %></span>
+              <span class="post-message"><%= data[i].message %></span>
             </div>
-            <% } %> <% } %>
+            <% } %>
+            <% } %>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+  <%- include('partials/scripts.ejs') %>
+</body>
+
 </html>

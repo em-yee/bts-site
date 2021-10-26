@@ -1,0 +1,94 @@
+/* FORM */
+.form-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-item label {
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.form-item input {
+  height: 2rem;
+  border: transparent;
+  border-radius: 5px;
+  padding-left: 8px;
+  min-width: 200px;
+}
+
+.form-item textarea {
+  border-radius: 5px;
+  border: transparent;
+  padding: 8px;
+  min-width: 200px;
+}
+
+/* POSTS */
+.feedback-messages-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+
+.feedback-messages-container h2 {
+  margin-top: 0;
+}
+
+
+.feedback-form-title {
+  color: black;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.feedback-form-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.feedback-form-container button {
+  background: #dfe7fd;
+  padding: 0.4rem 1rem;
+  width: 100%;
+  border-radius: 5px;
+  border: transparent;
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.feedback-form-container button:hover {
+  transform: scale(1.015);
+}
+
+.feedback-messages {
+  margin-top: 1rem;
+}
+
+.feedback-item {
+  background: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.post-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

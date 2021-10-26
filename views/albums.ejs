@@ -5,20 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BTS</title>
-  <link rel="stylesheet" href="https://use.typekit.net/sol4wcr.css" />
-  <link rel="stylesheet" type="text/css" href="public/css/styles.css" />
+  <%- include('partials/stylesheets.ejs') %>
+  <script src="public/js/index.js" type="module"></script>
 </head>
 
 <body>
   <%- include('partials/navbar.ejs') %>
   <div class="background" style="background-image: url('/public/images/background.png')">
     <div class="container">
-      <h1>DISCOGRAPHY</h1>
+      <h1 style="margin-top: 0;">DISCOGRAPHY</h1>
       <div class="albums-container">
         <% if (json) { %>
         <span id="album-data" data-attr-value="<%= json; %>"></span>
-        <% } %> <% if (data) { %> <% for (let i = 0; i < data.length; i++ ) {
-          %>
+        <% } %>
+        <% if (data) { %> <% for (let i = 0; i < data.length; i++ ) {
+            %>
         <div class="album-item" id="album-<%= i %>">
           <img src="/public/images/<%= data[i].artwork[0]; %>" alt="<%= data[i].shortname; %>" draggable="false" />
         </div>
@@ -35,8 +36,8 @@
                 ">
               <div class="album-cover-wrapper">
                 <div class="album-cover" style="
-                      background-image: url('/public/images/<%= data[i].artwork[0] %>');
-                    "></div>
+                                        background-image: url('/public/images/<%= data[i].artwork[0] %>');
+                                        "></div>
               </div>
               <div class="track-list"><%- data[i].tracklist %></div>
             </div>
@@ -57,12 +58,6 @@
                   padding: 0.4rem 0;
                 ">
               <a href="<%= data[i].mv %>">Watch Music Video</a>
-              <!--                <iframe-->
-              <!--                        width="560" height="315" src="https://www.youtube.com/embed/w6oEQu3AUCs?controls=0"-->
-              <!--                        title="YouTube video player" frameborder="0"-->
-              <!--                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-              <!--                        allowfullscreen-->
-              <!--                ></iframe>-->
             </div>
           </div>
         </div>
