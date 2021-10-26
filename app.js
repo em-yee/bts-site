@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-
+const socket = require('socket.io');
 const app = express();
 const port = 3000;
 
@@ -23,8 +23,18 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.listen(port, () => {
-  console.log(`running on port ${port}`);
-});
+const server = app.listen(port,() => {
+    console.log(`running on port ${port}`);
+})
+
+let io = socket(server);
+//listen for clients messages
+
+io.on('connection', (socket)=>{
+
+    socket.on('postMessage', (msgClient)=>{ //listening for incoming chat messages
+        io.emit('updateMessage', msgClient) //broadcast back out to all of the clients
+    })
+})
 
 module.exports = app;
