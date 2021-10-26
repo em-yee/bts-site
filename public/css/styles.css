@@ -23,7 +23,7 @@ h1 {
 /* NAVBAR */
 
 .navbar-wrapper {
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: 0;
   left: 0;
@@ -247,4 +247,35 @@ h1 {
 
 .popup__flexbox {
   display: flex;
+}
+
+/* FEEDBACK */
+
+.feedback-messages-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 1rem;}
+
+
+.feedback-form-title {
+  color: black;
+  font-size: 2rem;
+}
+
+.feedback-form-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.feedback-messages {
+  margin-top: 1rem;
+}
+
+.feedback-item{
+  margin: 0.5rem 0;
+   border: black 1px solid;
 }

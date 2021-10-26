@@ -11,11 +11,11 @@ $(document).ready(function () {
       });
     }
 
-    $('.overlay').click(() => {
-      $('body').css('overflow', 'auto');
-      $('.album-modal').fadeOut();
-    });
   }
+  $('.overlay').click(() => {
+    $('body').css('overflow', 'auto');
+    $('.album-modal').fadeOut();
+  });
 
   // Dropdown Menu
   $('#hamburger-icon').click(() => {
