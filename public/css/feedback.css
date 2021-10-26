@@ -34,16 +34,18 @@
   justify-content: flex-start;
   flex-direction: column;
   margin-left: 3rem;
+  height: 500px;
+  overflow: auto;
 }
 
 .feedback-messages-container h2 {
-  margin-top: 0;
+  margin: 0;
 }
 
 
 .feedback-form-title {
   color: black;
-  font-size: 3rem;
+  font-size: 2.4rem;
   margin-top: 0;
 }
 
@@ -55,7 +57,8 @@
 }
 
 .feedback-form-container button {
-  background: #dfe7fd;
+  background: rgba(255, 255 255);
+  opacity: 0.8;
   padding: 0.4rem 1rem;
   width: 100%;
   border-radius: 5px;
@@ -69,7 +72,7 @@
 }
 
 .feedback-form-container button:hover {
-  transform: scale(1.015);
+  opacity: 1;
 }
 
 .feedback-messages {
@@ -85,6 +88,7 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   padding: 1rem;
   margin-bottom: 1rem;
+  margin-right: 1rem;
   border-radius: 8px;
 }
 

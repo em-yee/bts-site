@@ -12,12 +12,13 @@ h1 {
 }
 
 .background {
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   background-size: cover;
+  z-index: 3;
 }
 
 .container {
